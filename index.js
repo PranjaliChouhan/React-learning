@@ -1,16 +1,17 @@
-// Create the first heading element
-var heading1 = document.createElement("h1");
-heading1.textContent = "Heading 1";
+import React from "react";
+import { ReactDOM } from "react-dom/client";
 
-// Create the second heading element
-var heading2 = document.createElement("h2");
-heading2.textContent = "Heading 2";
+ const Heading1=React.createElement("h2",{
+        id:"title",
+    },"Heading 1");
+    const Heading2=React.createElement("h3",{
+        id:"title",
+    },"Heading 2");
 
-// Create the third heading element
-var heading3 = document.createElement("h3");
-heading3.textContent = "Heading 3";
-
-// Append the headings to the document body
-document.body.appendChild(heading1);
-document.body.appendChild(heading2);
-document.body.appendChild(heading3);
+    const container=React.createElement("div",{//react is a global variable
+         id:"container"
+    },[Heading1, Heading2]);//these headings are react elemnets and object at the end of the day
+    const root=ReactDOM.createRoot(document.getElementById("root"));
+    //passing a react element inside the root
+    
+    root.render(container);
